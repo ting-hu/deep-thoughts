@@ -28,11 +28,16 @@ const typeDefs = gql`
     createdAt: String
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Query {
     me: User
     users: [User]
     user(username: String!): User
-    thoughts: [Thought]
+    thoughts(username: String): [Thought]
     thought(_id: ID!): Thought
   }
 
@@ -42,11 +47,6 @@ const typeDefs = gql`
     addThought(thoughtText: String!): Thought
     addReaction(thoughtId: ID!, reactionBody: String!): Thought
     addFriend(friendId: ID!): User
-  }
-
-  type Auth {
-    token: ID!
-    user: User
   }
 `;
 
