@@ -6,7 +6,7 @@ mongoose
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useFindAndModify: true,
+      useFindAndModify: false,
     }
   )
   .catch((err) => console.log(err.reason));
