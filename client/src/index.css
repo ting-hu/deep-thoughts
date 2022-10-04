@@ -1,10 +1,8 @@
 :root {
-  --primary: #497573;
-  --secondary: #99f7f2;
-  --tertiary: #b2c2c1;
-  --quatrinary: #cadbda;
-  --light: #e1f5f4;
-  --dark: #6c7575;
+  --primary: #0b0c10;
+  --secondary: #edc7b7;
+  --light: #edc7b7;
+  --dark: #ac3b61;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
   --spacing-one: calc(1rem * 0.25);
@@ -31,7 +29,7 @@ body {
   line-height: 1.5;
   font-size: 20px;
   color: var(--dark);
-  background-color: #f3fffee1;
+  background-color: #eee2dc;
 }
 
 h1,
@@ -239,6 +237,7 @@ nav a:hover {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  color:#123c69;
 }
 
 .container-fluid {
