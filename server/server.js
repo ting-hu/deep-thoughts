@@ -2,13 +2,15 @@ const express = require("express");
 const path = require("path");
 // import ApolloServer
 const { ApolloServer } = require("apollo-server-express");
+const uri = process.env.MONGODB_URI;
 
 // import our typeDefs and resolvers
 const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
 const db = require("./config/connection");
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.MONGODB_URI || 3001;
+//const PORT = process.env.PORT || 3001;
 const app = express();
 
 const startServer = async () => {
