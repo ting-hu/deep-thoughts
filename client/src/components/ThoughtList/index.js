@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ThoughtList = ({ thoughts, title }) => {
+  const handleDelete = async (event) => {
+    event.preventDefault();
+
+    console.log("DELETE!!!");
+  };
+
   if (!thoughts.length) {
     return <h3>No Thoughts Yet</h3>;
   }
@@ -12,6 +18,7 @@ const ThoughtList = ({ thoughts, title }) => {
       {thoughts &&
         thoughts.map((thought) => (
           <div key={thought._id} className="card mb-3">
+            <button onClick={handleDelete}>Delete</button>
             <p className="card-header">
               <Link
                 to={`/profile/${thought.username}`}

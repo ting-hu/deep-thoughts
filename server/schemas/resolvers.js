@@ -68,6 +68,16 @@ const resolvers = {
 
         return thought;
       }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    deleteThought: async (parent, args, context) => {
+      if (context.user) {
+        const deletedThought = await Thought.deleteOne({
+          _id: isValidObjectId(context.thoughtId),
+        });
+
+        return deletedThought;
+      }
 
       throw new AuthenticationError("You need to be logged in!");
     },
