@@ -53,6 +53,17 @@ export const ADD_THOUGHT = gql`
   }
 `;
 
+export const DELETE_THOUGHT = gql`
+  mutation deleteThought($thoughtId: ID!) {
+    deleteThought(thoughtId: $thoughtId) {
+      _id
+      reactions {
+        _id
+      }
+    }
+  }
+`;
+
 export const ADD_REACTION = gql`
   mutation addReaction($thoughtId: ID!, $reactionBody: String!) {
     addReaction(thoughtId: $thoughtId, reactionBody: $reactionBody) {
