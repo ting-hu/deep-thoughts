@@ -12,7 +12,9 @@ const ThoughtList = ({ thoughts, title, handleDelete }) => {
       {thoughts &&
         thoughts.map((thought) => (
           <div key={thought._id} className="card mb-3">
-            <button onClick={handleDelete}>Delete</button>
+            <button onClick={(event) => handleDelete(event, thought._id)}>
+              Delete
+            </button>
             <p className="card-header">
               <Link
                 to={`/profile/${thought.username}`}

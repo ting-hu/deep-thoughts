@@ -47,6 +47,7 @@ const Profile = () => {
   };
 
   const handleDelete = async () => {
+    console.log();
     try {
       await deleteThought({
         variables: { id: user.thoughts._id },
